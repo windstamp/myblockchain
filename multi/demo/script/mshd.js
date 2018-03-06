@@ -1,0 +1,12 @@
+var mshkdemoContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"a","type":"uint256"}],"name":"mshkadd","outputs":[{"name":"","type":"address"},{"name":"b","type":"uint256"}],"payable":false,"type":"function","stateMutability":"nonpayable"}]);
+var mshkdemo = mshkdemoContract.new(
+   {
+     from: web3.eth.accounts[0], 
+     data: '0x6060604052341561000c57fe5b5b60e48061001b6000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063ee64a56014603a575bfe5b3415604157fe5b60556004808035906020019091905050609e565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b6000600060006107d9840190503381925092505b509150915600a165627a7a723058205242b8dc5fab8d29c1acb2ae8c0eac878ddd43526fdf2d00524773192279a0770029', 
+     gas: '4700000'
+   }, function (e, contract){
+    console.log(e, contract);
+    if (typeof contract.address !== 'undefined') {
+         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+    }
+ })

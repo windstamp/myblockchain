@@ -1,0 +1,99 @@
+1. edit genesis.json
+
+2. geth init ./genesis.json --datadir "./chain"
+
+3.
+geth \
+  --datadir "./chain" \
+  --nodiscover \
+  console 2>>eth_output.log
+
+4. 
+web3.eth.accounts
+web3.personal.newAccount("123456")
+web3.personal.newAccount()
+web3.eth.accounts
+
+miner.start(1)
+miner.stop()
+
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+
+web3.eth.getBalance(acc0)
+web3.eth.getBalance(acc1)
+web3.fromWei(web3.eth.getBalance(acc0))
+web3.fromWei(web3.eth.getBalance(acc0), "ether")
+
+loadScript('./script/balances.js')
+checkAllBalances()
+
+web3.personal.unlockAccount(acc0,"123456")
+web3.eth.sendTransaction({from:acc0,to:acc1,value:web3.toWei(1,"ether")})
+miner.start()
+checkAllBalances()
+
+miner.stop()
+
+0xbB0a92d634D7b9Ac69079ed0e521CC2e0a97c420
+
+
+loadScript('./script/greeter.js')
+
+
+
+net.listening
+net.peerCount
+admin.peers
+admin.nodeInfo
+
+admin.addPeer("enode://f4642fa65af50cfdea8fa7414a5def7bb7991478b768e296f5e4a54e8b995de102e0ceae2e826f293c481b5325f89be6d207b003382e18a8ecba66fbaf6416c0@33.4.2.1:30303")
+
+
+
+geth --identity "MyNodeName" --rpc --rpcport "8080" --rpccorsdomain "*" --datadir "C:\chains\TestChain1" --port "30303" --nodiscover --rpcapi "db,eth,net,web3" --networkid 1999 init /path/to/CustomGenesis.json
+geth --identity "MyNodeName" --rpc --rpcport "8080" --rpccorsdomain "*" --datadir "C:\chains\TestChain1" --port "30303" --nodiscover --rpcapi "db,eth,net,web3" --networkid 1999 console
+
+web3.eth.getBlock(0)
+
+geth attach /home/smb/renshi/github/blockchain/demo/chain/geth.ipc
+
+
+yarn dev:electron --rpc ../demo/chain/geth.ipc
+yarn dev:electron --rpc http://localhost:8545
+yarn dev:electron --rpc /home/furnace/github/blockchain/demo/chain/geth.ipc
+
+eth.getCode(greeter.address)
+greeter.greet();
+
+greeterCompiled.greeter.info.abiDefinition;
+greeter.address;
+
+greeter.kill.sendTransaction({from:eth.accounts[0]})
+eth.getCode(greeter.address)
+
+web3.personal.unlockAccount(acc0,"123456")
+
+web3.personal.unlockAccount(acc0,"123456")
+loadScript('./script/mshd.js')
+miner.start()
+miner.stop()
+
+
+web3.personal.unlockAccount(acc0,"123456")
+loadScript('./script/token.js')
+miner.start()
+miner.stop()
+token.balanceOf(acc0)
+token.balanceOf(acc1)
+token.transfer(acc1, 500)
+
+
+web3.personal.unlockAccount(acc0,"123456")
+loadScript('./script/token2.js')
+miner.start()
+miner.stop()
+token.balanceOf(acc0)
+token.balanceOf(acc1)
+token.transfer(acc1, 500)
+

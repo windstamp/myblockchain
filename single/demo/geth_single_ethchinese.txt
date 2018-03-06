@@ -1,0 +1,310 @@
+1. demo1
+miner.start()
+web3.personal.unlockAccount(acc0,"123456")
+loadScript('./script/ethchinese/demo1.js')
+demo1
+demo1.f()
+miner.stop()
+
+2. demo2
+miner.start()
+web3.personal.unlockAccount(acc0,"123456")
+loadScript('./script/ethchinese/demo2.js')
+coin
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+coin.minter()
+coin.balances(acc0)
+coin.balances(acc1)
+coin.mint(acc0, 100)
+coin.mint(acc0, 130)
+coin.balances(acc0)
+coin.balances(acc1)
+coin.send(acc1, 60)
+coin.balances(acc0)
+coin.balances(acc1)
+miner.stop()
+
+
+3. demo3
+miner.start()
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+web3.personal.unlockAccount(acc0,"123456")
+web3.personal.unlockAccount(acc1,"123456")
+loadScript('./script/ethchinese/demo3_token.js')
+token
+token.address
+
+loadScript('./script/ethchinese/demo3.js')
+crowdsale4
+
+crowdsale4.beneficiary()
+crowdsale4.fundingGoal()
+web3.fromWei( crowdsale4.fundingGoal() )
+crowdsale4.amountRaised()
+web3.fromWei( crowdsale4.amountRaised() )
+crowdsale4.deadline()
+crowdsale4.price()
+web3.fromWei( crowdsale4.price() )
+crowdsale4.tokenReward()
+crowdsale4.balanceOf(acc0)
+web3.fromWei( crowdsale4.balanceOf(acc0) )
+crowdsale4.balanceOf(acc1)
+web3.fromWei( crowdsale4.balanceOf(acc1) )
+crowdsale4.balanceOf(acc2)
+web3.fromWei( crowdsale4.balanceOf(acc2) )
+contractAddress = crowdsale4.address
+crowdsale4.balanceOf(contractAddress)
+web3.fromWei( crowdsale4.balanceOf(contractAddress) )
+crowdsale4.fundingGoalReached()
+crowdsale4.crowdsaleClosed()
+
+contractAddress = crowdsale4.address
+web3.eth.sendTransaction({from:acc0,to:contractAddress,value:web3.toWei(99,"ether")})
+web3.eth.sendTransaction({from:acc1,to:contractAddress,value:web3.toWei(1,"ether")})
+web3.eth.sendTransaction({from:acc0,to:acc2,value:web3.toWei(1,"ether")})
+
+crowdsale4.checkGoalReached()
+eth.defaultAccount=acc2
+web3.personal.unlockAccount(acc2,"123456")
+crowdsale4.safeWithdrawal()
+
+loadScript('./script/balances.js')
+checkAllBalances()
+
+miner.stop()
+
+
+4. demo4
+miner.start()
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+eth.defaultAccount=acc0
+web3.personal.unlockAccount(acc0,"123456")
+web3.personal.unlockAccount(acc1,"123456")
+loadScript('./script/ethchinese/demo4.js')
+
+demotypes303
+demotypes303.add("hello 0")
+demotypes303.add("hello 1")
+demotypes303.add("hello 2")
+demotypes303.getStrAt(0)
+demotypes303.getStrAt(1)
+demotypes303.getStrAt(2)
+demotypes303.updateStrAt(1, "hello 11")
+demotypes303.getStrAt(1)
+demotypes303.deleteStrAt(1)
+demotypes303.getStrAt(0)
+demotypes303.getStrAt(1)
+demotypes303.getStrAt(2)
+
+
+miner.stop()
+
+
+5. demo5
+miner.start()
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+web3.personal.unlockAccount(acc0,"123456")
+web3.personal.unlockAccount(acc1,"123456")
+loadScript('./script/ethchinese/demo5.js')
+
+demotypes
+demotypes.f(10)
+demotypes.f2(30,50)
+demotypes.f3(5)
+demotypes.f4(100)
+
+miner.stop()
+
+
+6. demo6
+
+miner.start()
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+web3.personal.unlockAccount(acc0,"123456")
+web3.personal.unlockAccount(acc1,"123456")
+loadScript('./script/ethchinese/demo6.js')
+
+token4
+token4.Token()
+token4.balancesOf(0)
+token4.balancesOf(1)
+token4.balancesOf(2)
+token4.mint(33)
+token4.transfer(0, 1, 9)
+
+miner.stop()
+
+
+7. demo7
+
+miner.start()
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+web3.personal.unlockAccount(acc0,"123456")
+web3.personal.unlockAccount(acc1,"123456")
+loadScript('./script/ethchinese/demo7.js')
+
+token
+token.owner()
+token.balancesOf(acc0)
+token.balancesOf(acc1)
+token.mint(3)
+token.transfer(acc1, 20000)
+
+miner.stop()
+
+
+8. demo8
+
+miner.start()
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+web3.personal.unlockAccount(acc0,"123456")
+web3.personal.unlockAccount(acc1,"123456")
+loadScript('./script/ethchinese/demo8.js')
+
+demo
+demo.b2()
+demo.f()
+demo.Forward()
+demo.Left()
+demo.Right()
+
+miner.stop()
+
+
+
+9. demo9
+
+miner.start()
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+web3.personal.unlockAccount(acc0,"123456")
+web3.personal.unlockAccount(acc1,"123456")
+
+loadScript('./script/ethchinese/demo9.js')
+
+demotypes9
+demotypes9.PersonList(0)
+demotypes9.AddPerson("aa", 1, 18, "131")
+demotypes9.AddPerson2("bb", 1, 38, "319")
+demotypes9.PersonList(1)
+demotypes9.PersonList(2)
+
+miner.stop()
+
+
+10. demo10
+
+miner.start()
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+web3.personal.unlockAccount(acc0,"123456")
+web3.personal.unlockAccount(acc1,"123456")
+
+loadScript('./script/ethchinese/demo10.js')
+
+
+miner.stop()
+
+
+
+11. demo11
+
+miner.start()
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+web3.personal.unlockAccount(acc0,"123456")
+web3.personal.unlockAccount(acc1,"123456")
+
+loadScript('./script/ethchinese/demo11.js')
+
+demo.balance()
+demo.addFinney()
+demo.addSzabo()
+
+miner.stop()
+
+
+12. demo12
+
+miner.start()
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+web3.personal.unlockAccount(acc0,"123456")
+web3.personal.unlockAccount(acc1,"123456")
+
+loadScript('./script/ethchinese/demo12.js')
+
+demo
+demo.a()
+demo.addSeconds(1)
+demo.addMinutes(1)
+demo.addHours(1)
+demo.addDays(1)
+demo.addYears(1)
+
+miner.stop()
+
+
+
+loadScript('./script/ethchinese/demo13.js')
+loadScript('./script/ethchinese/demo14.js')
+loadScript('./script/ethchinese/demo15.js')
+
+
+
+16. demo16
+
+miner.start()
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+web3.personal.unlockAccount(acc0,"123456")
+web3.personal.unlockAccount(acc1,"123456")
+
+loadScript('./script/ethchinese/demo16.js')
+
+coin
+coin.minter()
+coin.balances(acc0)
+coin.balances(acc1)
+coin.mint(acc0, 1)
+coin.mint(acc1, 1)
+coin.mint2(acc0, 1)
+coin.mint2(acc1, 1)
+coin.send(acc1, 3)
+coin.changeMinter(acc1)
+
+miner.stop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

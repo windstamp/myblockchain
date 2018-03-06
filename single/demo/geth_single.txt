@@ -1,0 +1,69 @@
+1. edit genesis.json
+
+2. geth init ./genesis.json --datadir "./chain"
+
+3.
+geth \
+  --datadir "./chain" \
+  --nodiscover \
+  console 2>>eth_output.log
+
+4. 
+web3.eth.accounts
+web3.personal.newAccount("123456")
+web3.personal.newAccount()
+web3.eth.accounts
+["0x5f4a581a3d1c4d5f3662d963326c44bae4aacbba", "0x9ebf98a4b208a9dd7a4d10bfca28a2f0075ea95d"]
+["0x8112c22e84ab1392e47eda3f5af7f35481a6fb2b", "0x5531b69036042f215c5a6440ed626388e8539db4"]
+
+web3.personal.newAccount("123456")
+["0x8112c22e84ab1392e47eda3f5af7f35481a6fb2b", "0x5531b69036042f215c5a6440ed626388e8539db4", "0xd52b62d88d41d83378d8e60760aeeea4c436a5d5"]
+
+5.
+miner.start()
+admin.sleepBlocks(10);
+miner.stop()
+
+6.
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+acc2 = web3.eth.accounts[2]
+
+web3.eth.getBalance(acc0)
+web3.eth.getBalance(acc1)
+web3.fromWei(web3.eth.getBalance(acc0))
+web3.fromWei(web3.eth.getBalance(acc0), "ether")
+
+7.
+loadScript('./script/balances.js')
+checkAllBalances()
+
+8.
+web3.personal.unlockAccount(acc0,"123456")
+web3.eth.sendTransaction({from:acc0,to:acc1,value:web3.toWei(1,"ether")})
+miner.start(1);
+admin.sleepBlocks(1);
+miner.stop();
+checkAllBalances()
+
+9.
+geth attach ./chain/geth.ipc
+
+10.
+txpool.status
+eth.getBlockTransactionCount("pending");
+eth.getBlock("pending", true).transactions
+
+11.
+eth.defaultAccount=acc0
+txhash = web3.eth.sendTransaction({from:acc0,to:acc1,value:web3.toWei(1,"ether")})
+miner.start(1);
+admin.sleepBlocks(1);
+miner.stop();
+contractaddress = eth.getTransactionReceipt(txhash);
+eth.getCode(contractaddress.contractAddress)
+
+12.
+web3.sha3("Print(uint256)")
+
+

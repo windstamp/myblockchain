@@ -1,0 +1,16 @@
+1. [ethereum@localhost demo]$ geth help
+
+2. > eth.(Tab Tab)
+
+3. > personal.(Tab Tab)
+
+4. > web3(Enter)
+
+5. > miner.(Tab Tab)
+
+6. > txpool.(Tab Tab)
+
+7. > exit
+
+
+

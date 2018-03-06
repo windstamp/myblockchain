@@ -1,0 +1,8 @@
+$ nginx # for connecting from windows to linux
+
+$ git clone https://github.com/ethereum/browser-solidity
+$ cd browser-solidity
+[root@localhost browser-solidity]$ npm install
+[root@localhost browser-solidity]$ npm run prepublish
+[root@localhost browser-solidity]$ npm start
+$ 

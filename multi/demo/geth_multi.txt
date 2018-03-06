@@ -1,0 +1,178 @@
+1. edit genesis.json
+
+2. geth --datadir ./bootnode/chain init ./genesis.json
+
+3.
+geth --datadir ./bootnode/chain \
+--networkid 1000 \
+--identity "bootnode" \
+--port 30303 \
+--rpc \
+--rpcport 8545 \
+--rpccorsdomain "*" \
+--nodiscover \
+--verbosity 3 \
+console 2>>./bootnode/eth_output.log
+
+eth.getBlock(0)
+
+personal.newAccount("123456")
+personal.newAccount("123456")
+web3.eth.accounts
+
+["0xa17f54694146b57dc5301245043decd1216b34f0", "0xc98178d32034074b45786533e8f2287a8810f86b"]
+
+miner.start()
+
+miner.stop()
+
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+
+web3.eth.getBalance(acc0)
+web3.eth.getBalance(acc1)
+web3.fromWei(web3.eth.getBalance(acc0))
+web3.fromWei(web3.eth.getBalance(acc0), "ether")
+
+loadScript('./script/balances.js')
+checkAllBalances()
+
+
+4.
+geth --datadir ./node2/chain init ./genesis.json
+
+geth --datadir ./node2/chain \
+--fast \
+--cache 16 \
+--port 30304 \
+--networkid 1000 \
+--identity "node2" \
+--rpc \
+--rpcport 8555 \
+--rpccorsdomain "*" \
+--nodiscover \
+--verbosity 3 \
+console 2>>./node2/eth_output.log
+
+eth.getBlock(0)
+
+personal.newAccount("123456")
+personal.newAccount("123456")
+web3.eth.accounts
+
+["0x087a2670cccc4eff18cf57f85335bdff7839bc73", "0x6990c7548602cf7766cb2ce1ae3c0959ab3f7af8"]
+
+miner.start()
+
+miner.stop()
+
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+
+web3.eth.getBalance(acc0)
+web3.eth.getBalance(acc1)
+web3.fromWei(web3.eth.getBalance(acc0))
+web3.fromWei(web3.eth.getBalance(acc0), "ether")
+
+loadScript('./script/balances.js')
+checkAllBalances()
+
+
+5.
+geth --datadir ./node3/chain init ./genesis.json
+
+geth --datadir ./node3/chain \
+--fast \
+--cache 16 \
+--port 30305 \
+--networkid 1000 \
+--identity "node3" \
+--rpc \
+--rpcport 8565 \
+--rpccorsdomain "*" \
+--nodiscover \
+--verbosity 3 \
+console 2>>./node3/eth_output.log
+
+eth.getBlock(0)
+
+personal.newAccount("123456")
+personal.newAccount("123456")
+web3.eth.accounts
+
+["0x5b5b77ca8fdc204b8494607719013ed8646de957", "0x0004f6f1e7aaa7f27152e0e5d249117b932c2d08"]
+
+miner.start()
+
+miner.stop()
+
+acc0 = web3.eth.accounts[0]
+acc1 = web3.eth.accounts[1]
+
+web3.eth.getBalance(acc0)
+web3.eth.getBalance(acc1)
+web3.fromWei(web3.eth.getBalance(acc0))
+web3.fromWei(web3.eth.getBalance(acc0), "ether")
+
+loadScript('./script/balances.js')
+checkAllBalances()
+
+
+11. on bootnode
+admin.nodeInfo.enode
+
+"enode://97cba1268845452c3a0cf3d80f8a0af73f7934439a3cf2d10930f51a1f53b36d15708995bf372dcfba7198f05b00b01d07b86f39a055ffb0d989a0d168c04dd5@[::]:30303?discport=0"
+
+12. on node2
+admin.addPeer("enode://97cba1268845452c3a0cf3d80f8a0af73f7934439a3cf2d10930f51a1f53b36d15708995bf372dcfba7198f05b00b01d07b86f39a055ffb0d989a0d168c04dd5@[::]:30303?discport=0");
+
+13. on node3
+admin.addPeer("enode://97cba1268845452c3a0cf3d80f8a0af73f7934439a3cf2d10930f51a1f53b36d15708995bf372dcfba7198f05b00b01d07b86f39a055ffb0d989a0d168c04dd5@[::]:30303?discport=0");
+
+14. on bootnode
+admin.peers
+
+15. on node2
+admin.peers
+
+17. on node3
+admin.peers
+
+18. on anyone of bootnode, node2, node3
+web3.personal.unlockAccount(acc0,"123456")
+
+eth.defaultAccount=acc0
+web3.personal.unlockAccount(eth.defaultAccount,"123456")
+
+loadScript('./script/balances.js')
+checkAllBalances()
+
+loadScript('./script/greeter.js')
+loadScript('./script/basiciterator.js')
+loadScript('./script/creator_balance_checker.js')
+loadScript('./script/basic_info_getter.js')
+loadScript('./script/value_incrementer.js')
+loadScript('./script/value_incrementer2.js')
+loadScript('./script/value_incrementer3.js')
+loadScript('./script/msg_examiner.js')
+loadScript('./script/endowment_retriever.js')
+loadScript('./script/coin_flipper.js')
+loadScript('./script/multiple_constructor_test.js')
+loadScript('./script/ping.js')
+loadScript('./script/pong.js')
+loadScript('./script/ping_via_send.js')
+loadScript('./script/pong_via_send.js')
+loadScript('./script/array_passer.js')
+loadScript('./script/bytes32_passer.js')
+loadScript('./script/string_passer.js')
+loadScript('./script/msg_value_to_bytes20.js')
+loadScript('./script/replicator.js')
+loadScript('./script/2D_array.js')
+loadScript('./script/fixedbytearray_to_byte_array.js')
+loadScript('./script/indexOf.js')
+loadScript('./script/byteExtractor.js')
+loadScript('./script/array_receiver_and_returner.js')
+loadScript('./script/struct_and_for_loop_tester.js')
+loadScript('./script/contract_detector.js')
+
+

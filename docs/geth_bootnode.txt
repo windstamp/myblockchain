@@ -1,0 +1,75 @@
+geth --datadir ./bootnode/chain init ./bootnode/genesis.json
+
+geth --datadir ./bootnode/chain init ./genesis.json
+
+geth --datadir ./bootnode/chain \
+--networkid 1000 \
+--identity "bootnode" \
+--port 30303 \
+--rpc \
+--rpcport 8545 \
+--rpccorsdomain "*" \
+--nodiscover \
+--verbosity 4 \
+console 2>>./bootnode/eth_output.log
+
+eth.getBlock(0)
+
+personal.newAccount("123456")
+personal.newAccount("123456")
+
+miner.start()
+
+geth attach ./bootnode/chain/geth.ipc
+
+eth.getBalance(eth.accounts[0])
+
+
+geth --datadir ./node2/chain init ./genesis.json
+geth --datadir ./node2/chain \
+--fast \
+--cache 512 \
+--port 30304 \
+--networkid 1000 \
+--identity "node2" \
+--rpc \
+--rpcport 9545 \
+--rpccorsdomain "*" \
+--nodiscover \
+--verbosity 4 \
+console 2>>./node2/eth_output.log
+
+
+admin.nodeInfo.enode
+
+admin.addPeer("enode://cc5023acdfacb48597253927e6909d87bac644949b0633f927a144b0d65b27756f71948f08ce5a544a902473c66246191d266519eb0390fdedee1647c81f8bc8@[::]:30303?discport=0");
+
+admin.peers
+
+
+geth --datadir ./node3/chain init ./genesis.json
+geth --datadir ./node3/chain \
+--fast \
+--cache 512 \
+--port 30305 \
+--networkid 1000 \
+--identity "node3" \
+--rpc \
+--rpcport 9565 \
+--rpccorsdomain "*" \
+--nodiscover \
+--verbosity 4 \
+console 2>>./node3/eth_output.log
+
+admin.addPeer("enode://cc5023acdfacb48597253927e6909d87bac644949b0633f927a144b0d65b27756f71948f08ce5a544a902473c66246191d266519eb0390fdedee1647c81f8bc8@[::]:30303?discport=0");
+
+admin.peers
+
+
+
+admin.nodeInfo.enode
+admin.addPeer("enode://cc5023acdfacb48597253927e6909d87bac644949b0633f927a144b0d65b27756f71948f08ce5a544a902473c66246191d266519eb0390fdedee1647c81f8bc8@[::]:30303?discport=0");
+admin.peers
+
+
+
